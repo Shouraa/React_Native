@@ -21,8 +21,9 @@ const SearchBar = ({ input, onInputChange, onInputSubmit }) => {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: "grey",
+    backgroundColor: "white",
     marginTop: 12,
+    marginBottom: 12,
     height: 48,
     borderRadius: 8,
     marginHorizontal: 16,
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     flex: 1,
-    fontSize: 22,
+    fontSize: 20,
   },
 
   icon: {

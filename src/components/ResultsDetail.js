@@ -6,8 +6,9 @@ const ResultsDetail = ({ result }) => {
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: result.Poster }} />
       <Text style={styles.title}>{result.Title}</Text>
-      <Text style={styles.title}>{result.Type}</Text>
-      <Text style={styles.title}>{result.Year}</Text>
+      <Text style={styles.caption}>
+        {result.Type} - {result.Year}
+      </Text>
     </View>
   );
 };
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
 
   image: {
     width: 250,
-    height: 120,
+    height: 200,
     borderRadius: 4,
     marginBottom: 8,
   },
@@ -27,6 +28,14 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 16,
+    color: "#9d8de9",
+    marginBottom: 8,
+  },
+
+  caption: {
+    fontWeight: "bold",
+    fontSize: 14,
+    color: "#9d8de9",
   },
 });
 

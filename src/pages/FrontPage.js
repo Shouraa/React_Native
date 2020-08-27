@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import SearchBar from "../components/SearchBar";
-import ResultsLists from "../components/ResultsList";
 
 import axios from "axios";
 import ResultsList from "../components/ResultsList";
@@ -26,20 +25,25 @@ const FrontPage = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <SearchBar
         input={input}
         onInputChange={setInput}
         onInputSubmit={searchApi}
       />
 
-      <Text>You have fethched {results.length} results</Text>
-      <ResultsList results={results} title="New" />
-      {/* <ResultsList results={filterByYear(2005)} title="Classic" /> */}
+      <ScrollView>
+        <ResultsList results={results} title="Trending" />
+        <ResultsList results={results} title="Classics" />
+      </ScrollView>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#262626",
+  },
+});
 
 export default FrontPage;
