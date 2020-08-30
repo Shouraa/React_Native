@@ -1,24 +1,18 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import SearchBar from "../components/SearchBar";
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import SearchBar from '../components/SearchBar';
 
-import axios from "axios";
-import ResultsList from "../components/ResultsList";
+import axios from 'axios';
+import ResultsList from '../components/ResultsList';
 
 const FrontPage = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [results, setResults] = useState([]);
 
-  // const filterByYear = (year) => {
-  //   return results.filter((result) => {
-  //     return parseInt(result.Year) > 2012;
-  //   });
-  // };
-
-  const url = "http://www.omdbapi.com/?i=tt3896198&apikey=bece7c38";
+  const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=bece7c38';
 
   const searchApi = async () => {
-    const response = await axios.get(url + "&s=" + input);
+    const response = await axios.get(url + '&s=' + input);
     console.log(response);
 
     setResults(response.data.Search);
@@ -33,8 +27,8 @@ const FrontPage = () => {
       />
 
       <ScrollView>
-        <ResultsList results={results} title="Trending" />
-        <ResultsList results={results} title="Classics" />
+        <ResultsList results={results} title='Trending' />
+        <ResultsList results={results} title='Classics' />
       </ScrollView>
     </View>
   );
@@ -42,7 +36,7 @@ const FrontPage = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#262626",
+    backgroundColor: '#262626',
   },
 });
 
